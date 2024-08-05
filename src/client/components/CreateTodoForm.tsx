@@ -37,7 +37,8 @@ export const CreateTodoForm = () => {
 
   return (
     <form
-      onSubmit={() => {
+      onSubmit={(e) => {
+        e.preventDefault()
         createTodo({
           body: todoBody,
         })
@@ -62,7 +63,7 @@ export const CreateTodoForm = () => {
 
       <button
         className="gap-2 rounded-full bg-[#334155] px-5 py-2 text-center font-sans text-sm font-bold text-white"
-        type="button"
+        type="submit"
         disabled={isCreatingTodo}
         onClick={() => {
           createTodo({
